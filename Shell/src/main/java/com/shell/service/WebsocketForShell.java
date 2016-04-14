@@ -59,19 +59,13 @@ public class WebsocketForShell {
         System.out.println(sdf.format(new Date()) + "  来自客户端的消息:" + message);
         JSONObject json = JSONObject.fromObject(message);
         ShellMessage shellMessage=(ShellMessage) JSONObject.toBean(json,ShellMessage.class);
-        ShellUtils shellUtils=new ShellUtils();
-//        if (sshSessionMap.containsKey(session)) {
-//            shellUtils=sshSessionMap.get(session);
-//        }else {
-//            shellUtils =new ShellUtils();
-//        }
-        shellUtils.connectServer(shellMessage.getHost(),shellMessage.getUsername(),shellMessage.getPassword());
-        String log=shellUtils.excuteCommand(shellMessage.getCommand(),shellMessage.getHost(),shellMessage.getUsername(),shellMessage.getPassword());
+        SSHUtils sshUtils=new SSHUtils();
         try {
-            sendMessage(log);
+            session.getBasicRemote().sendText(sshUtils.execCommand(shellMessage));
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 
     /**

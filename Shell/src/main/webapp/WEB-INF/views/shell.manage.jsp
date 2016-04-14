@@ -39,6 +39,10 @@
         .log span{
             color: rgb(171, 140, 21);
         }
+        span.command_info {
+            color: rgba(193, 182, 33, 0.94);
+            font-size: 20px;
+        }
     </style>
 </head>
 <body>
