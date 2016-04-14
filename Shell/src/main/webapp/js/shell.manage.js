@@ -22,7 +22,8 @@ websocket.onopen = function (event) {
 
 //接收到消息的回调方法
 websocket.onmessage = function () {
-    $("#logAlert").append(event.data)
+    $("#logAlert").append(event.data);
+    $("#logAlert").scrollTop($("#logAlert")[0].scrollHeight);
 }
 
 //连接关闭的回调方法
@@ -65,11 +66,6 @@ function exec() {
     }
     websocket.send(JSON.stringify(message));
 }
-
-$(function(){
-    $("#logAlert").scrollTop($("#logAlert")[0].scrollHeight );
-})
-
 function clearLog(){
     $("#logAlert").empty();
 }
