@@ -38,3 +38,6 @@ KEY idx_create_time(create_time)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='秒杀成功明细表';
 
 # --连接数据库控制台
+# --为什么手写DDL
+# --记录每次上线的DDL修改
+# --上线V1.1
