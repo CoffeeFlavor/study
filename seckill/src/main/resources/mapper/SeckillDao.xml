@@ -8,8 +8,8 @@
         UPDATE seckill
         SET
         number=number-1
-        WHEN seckill_id=#{seckilled}
-        AND start_time <![CDATA[ <= ]]]> #{killTime}
+        WHERE seckill_id=#{seckilled}
+        AND start_time <![CDATA[ <= ]]> #{killTime}
         AND end_time >=#{killTime}
         AND number >0;
     </update>
@@ -18,10 +18,10 @@
         SELECT
          seckill_id,name,number,start_time,end_time,create_time
         FROM seckill
-        WHERE seckill.seckill_id=#{seckillId}
+        WHERE seckill_id=#{seckillId};
     </select>
 
-    <select id="queryuAll" resultType="Seckill">
+    <select id="queryAll" resultType="Seckill">
         SELECT
         seckill_id,name,number,start_time,end_time,create_time
         FROM seckill
