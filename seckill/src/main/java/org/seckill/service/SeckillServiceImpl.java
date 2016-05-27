@@ -26,7 +26,7 @@ import java.util.List;
  * Time: 8:58
  */
 @Service
-public class SeckillServiceImpl implements SekillService {
+public class SeckillServiceImpl implements SeckillService {
 
     private Logger logger= LoggerFactory.getLogger(SeckillServiceImpl.class);
 
