@@ -55,7 +55,7 @@ public class SeckillExecution {
     }
 
     public String getStateInfo() {
-        return stateInfo;
+        return SeckillStatEnum.stateOf(state).getStateInfo();
     }
 
     public void setStateInfo(String stateInfo) {

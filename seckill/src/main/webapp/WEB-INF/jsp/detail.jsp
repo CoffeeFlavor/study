@@ -66,8 +66,8 @@
         //使用EL表达式传入参数
         seckill.detaill.init({
             seckillId:${seckill.seckillId},
-            startTIme:${seckill.startTime.time},//毫秒
-            endTIme:${seckill.endTime.time}
+            startTime:${seckill.startTime.time},//毫秒
+            endTime:${seckill.endTime.time}
         })
     })
 </script>
