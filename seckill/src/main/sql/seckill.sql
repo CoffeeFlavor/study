@@ -15,7 +15,7 @@ CREATE PROCEDURE 'seckill'.'execute_seckill'
     VALUES (v_seckill_id, v_phone, v_kill_time);
     SELECT row_count
     INTO insert_count;
-    IF (insert_count < 0)
+    IF (insert_count = 0)
     THEN
       ROLLBACK;
       SET r_result = -1;
@@ -32,6 +32,25 @@ CREATE PROCEDURE 'seckill'.'execute_seckill'
             AND number > 0;
       SELECT row_count
       INTO insert_count;
-      SET r_result = -1
-    END IF $$
-END $$
+      IF (insert_count = 0)
+      THEN
+        ROLLBACK;
+        SET r_result = 0;
+      ELSEIF (insert_count < 0)
+        THEN
+          ROLLBACK;
+          SET r_result = -2;
+      ELSE
+        COMMIT;
+        SET r_result = 1;
+      END IF;
+    END IF;
+  END $$
+# 存储过程定义结束
+
+DELIMITER ;
+SET @r_result=-3;
+# 执行存储过程
+CALL execute_seckill(1000,1350217891,now(),@r_result);
+# 打印结果
+SELECT @r_result;
