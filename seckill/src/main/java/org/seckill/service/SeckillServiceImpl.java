@@ -122,4 +122,8 @@ public class SeckillServiceImpl implements SeckillService {
             throw new SeckillException("seckill inner error :" + e.getMessage());
         }
     }
+
+    public SeckillExecution executeSeckillProcedure(long seckillId, long userPhone, String md5) throws SeckillException, RepeatKillException, SeckillCloseException {
+        return null;
+    }
 }
