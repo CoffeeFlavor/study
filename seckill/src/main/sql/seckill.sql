@@ -54,3 +54,9 @@ SET @r_result=-3;
 CALL execute_seckill(1000,1350217891,now(),@r_result);
 # 打印结果
 SELECT @r_result;
+
+#存储过程
+# 1：存储过程优化：事务行级锁持有时间
+# 2：不要过度依赖存储过程
+# 3：简单的逻辑，可以应用存储过程
+# 4：QPS:一个秒杀单6000/qps
