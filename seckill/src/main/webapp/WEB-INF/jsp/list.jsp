@@ -27,6 +27,7 @@
                 </tr>
                 </thead>
                 <tbody>
+
                 <c:forEach var="sk" items="${list}">
                     <tr>
                         <td>${sk.name}</td>
