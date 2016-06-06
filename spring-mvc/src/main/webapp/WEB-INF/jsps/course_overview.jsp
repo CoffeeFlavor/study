@@ -22,7 +22,7 @@
 				<div class="course-embed l">
 					<div id="js-course-img" class="img-wrap">
 						<img width="600" height="340" alt=""
-							src="<%=request.getContextPath()%>/${course.imgPath}"
+							src="../../resources/imgs/course-img.jpg"
 							class="course_video" />
 					</div>
 					<div id="js-video-wrap" class="video" style="display: none">
