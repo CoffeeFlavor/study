@@ -1,9 +1,7 @@
 package com.imooc.base;
 
-import com.imooc.ioc.interfaces.OneInterface;
 import org.junit.After;
 import org.junit.Before;
-import org.omg.CORBA.BAD_CONTEXT;
 import org.springframework.beans.BeansException;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.util.StringUtils;
