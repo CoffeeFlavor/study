@@ -16,7 +16,6 @@
             
             <aop:around pointcut-ref="idempotentOperation" method="doConcurrentOperation"/>
         </aop:aspect>
-    
     </aop:config>
 
     <bean id="concurrentOperationExecutor" class="com.imooc.aop.schema.advisors.ConcurrentOperationExecutor">
