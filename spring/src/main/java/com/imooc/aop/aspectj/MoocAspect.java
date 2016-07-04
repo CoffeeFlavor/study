@@ -1,8 +1,8 @@
 package com.imooc.aop.aspectj;
 
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.aspectj.lang.annotation.Pointcut;
-import org.omg.CORBA.Object;
 import org.springframework.stereotype.Component;
 
 /**
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class MoocAspect {
 
-    @Pointcut("execution(* com.imooc.aop.aspectj.biz.*Biz.*(..))")
+    @Pointcut("execution(String com.imooc.aop.aspectj.biz.*Biz.*(..))")
     public void pointcut() {
     }
 
@@ -26,6 +26,18 @@ public class MoocAspect {
     @Before("pointcut()")
     public void before() {
         System.out.println("Before");
+    }
+
+    @Before("pointcut()&&args(arg)")
+    public void beforeWithParams(String arg) {
+        System.out.println("BeforeWithParams:"+arg);
+
+    }
+
+    @Before("pointcut()&&@annotation(moocMethod)")
+    public void beforeWithAnnotation(MoocMethod moocMethod) {
+        System.out.println("BeforeWithAnnotation:"+moocMethod.value());
+
     }
 
 
@@ -42,7 +54,17 @@ public class MoocAspect {
     @AfterThrowing(pointcut="pointcut()",throwing ="e" )
     public void afterThrowing(RuntimeException e){
         System.out.println("AfterThrowing");
+        System.out.println(e);
     }
 
+
+    @Around("pointcut()")
+    public Object around(ProceedingJoinPoint pjp)throws Throwable{
+        System.out.println("Around 1");
+        Object obj=pjp.proceed();
+        System.out.println("Around 2");
+        System.out.println("Around:"+obj);
+        return obj;
+    }
 
 }
