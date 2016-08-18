@@ -1,5 +1,6 @@
-<%@ page contentType="text/html;charset=utf-8" language="java" errorPage="" %>
+<%@ page contentType="text/html;charset=utf-8" language="java" errorPage="error.jsp" %>
 <%@ page import="java.sql.*" %>
+<%@ page info="你妹纸的" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,5 +28,6 @@ ResultSet rs=stmt.executeQuery("select * from resource");
 </tr>
 <%}%>
 </table>
+<%=getServletInfo()%>
 </body>
 </html>
