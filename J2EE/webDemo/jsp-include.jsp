@@ -2,11 +2,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>forward结果页</title>
+	<title>include测试</title>
 </head>
 <body>
 	<!-- 错误提醒页面 -->
-<%=request.getParameter("age")%>
-<%=request.getParameter("username")%>
+<jsp:include page="scriptlet.jsp"/>
 </body>
 </html>
