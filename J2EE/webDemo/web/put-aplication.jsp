@@ -8,7 +8,6 @@
     int i;
 %>
 <%
-    application
 %>
 
 </body>
