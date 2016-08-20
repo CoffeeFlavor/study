@@ -8,7 +8,8 @@
     int i;
 %>
 <%
+    application.setAttribute("counter",String.valueOf(i++));
 %>
-
+<%=i%>
 </body>
 </html>
