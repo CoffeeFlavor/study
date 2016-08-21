@@ -1,5 +1,6 @@
 package lee;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -22,6 +23,11 @@ public class GetApplication extends HttpServlet{
         PrintWriter out=res.getWriter();
         out.print("<html><head><title>");
         out.print("测试application");
+        out.print("</title></head><body>");
+        ServletContext sc=getServletContext();
+        out.print("application中当前的counter值为：");
+        out.println(sc.getAttribute("counter"));
+        out.println("</body></html>");
         
     }
 }

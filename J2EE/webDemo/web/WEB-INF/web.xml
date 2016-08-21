@@ -3,4 +3,36 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+    <context-param>
+        <param-name>driver </param-name>
+        <param-value>com.mysql.jdbc.Driver</param-value>
+    </context-param>
+    <context-param>
+        <param-name>url</param-name>
+        <param-value>jdbc:mysql://localhost:3306/visualtravel</param-value>
+    </context-param>
+    <context-param>
+        <param-name>user</param-name>
+        <param-value>root</param-value>
+    </context-param>
+    <context-param>
+        <param-name>pass</param-name>
+        <param-value>root</param-value>
+    </context-param>
+    <servlet>
+        <servlet-name>config</servlet-name>
+        <jsp-file>/configTest2.jsp</jsp-file>
+        <init-param>
+            <param-name>name</param-name>
+            <param-value>crazyit.org</param-value>
+        </init-param>
+        <init-param>
+            <param-name>age</param-name>
+            <param-value>30</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>config</servlet-name>
+        <url-pattern>/config</url-pattern>
+    </servlet-mapping>
 </web-app>
