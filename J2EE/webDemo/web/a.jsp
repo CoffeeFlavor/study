@@ -7,5 +7,6 @@
 <body>
 欢迎学习Java Web 知识,现在的时间是：
 <%out.println(new java.util.Date());%>
+<img src="img.jsp">
 </body>
 </html>
