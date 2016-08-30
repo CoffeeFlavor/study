@@ -35,4 +35,17 @@
         <servlet-name>config</servlet-name>
         <url-pattern>/config</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>firstServlet</servlet-name>
+        <servlet-class>lee.FirstServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>firstServlet</servlet-name>
+        <url-pattern>/aa</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>timerServlet</servlet-name>
+        <servlet-class>lee.TimerServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
 </web-app>
