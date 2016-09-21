@@ -66,6 +66,18 @@
     </filter>
     <filter-mapping>
         <filter-name>authority</filter-name>
+        <url-pattern>/proLogin.jsp</url-pattern>
+    </filter-mapping>
+    <filter>
+        <filter-name>UrlWriteFilter</filter-name>
+        <filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>UrlWriteFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+
+    <listener>
+        <listener-class>lee.GetConnListener</listener-class>
+    </listener>
 </web-app>

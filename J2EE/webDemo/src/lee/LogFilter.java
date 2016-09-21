@@ -17,8 +17,8 @@ import java.io.*;
  * @version  1.0
  */
 
-@WebFilter(filterName="log"
-		,urlPatterns={"/*"})
+//@WebFilter(filterName="log"
+//		,urlPatterns={"/*"})
 public class LogFilter implements Filter
 {
 	// FilterConfig可用于访问Filter的配置信息
