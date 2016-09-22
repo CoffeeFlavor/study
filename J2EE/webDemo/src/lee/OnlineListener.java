@@ -12,7 +12,7 @@ import javax.servlet.http.*;import java.util.*;/**
  * @author  Yeeku.H.Lee kongyeeku@163.com
  * @version  1.0
  */
-@WebListener
+//@WebListener
 public class OnlineListener
 		implements HttpSessionListener
 {

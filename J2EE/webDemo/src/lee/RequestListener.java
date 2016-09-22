@@ -15,7 +15,7 @@ import javax.servlet.annotation.*;
  * @version  1.0
  */
 
-@WebListener
+//@WebListener
 public class RequestListener
 		implements ServletRequestListener , ServletRequestAttributeListener
 {
