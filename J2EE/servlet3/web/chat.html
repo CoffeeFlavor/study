@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        //创建WebSocket
+        var webSocket=new WebSocket("ws://127.0.0.1:8888/websocket/chat");
+        var sendMsg=function(){
+            var inputElement=document.getElementById("msg");
+            //发送消息
+            webSocket.send(inputElement.value);
+            //清空单行文本框
+            inputElement.value="";
+        };
+        var send=function(event){
+            var event =event||window.event;
+            if (event.keyCode==13){
+                sendMsg();
+            }
+        };
+        webSocket.onopen=function(){
+            //为onmessage事件绑定监听器，接受消息
+            webSocket.onmessage=function(event){
+                var show=document.getElementById("show");
+                //接收并显示消息
+                show.innerHTML+=event.data+"<br/>";
+                show.scrollTop=show.scrollHeight;
+            };
+            document.getElementById("msg").onkeyup=send;
+            document.getElementById("sendBn").onclick=sendMsg;
+        };
+        webSocket.onclose=function(){
+            document.getElementById("msg").onkeydown=null;
+            document.getElementById("sendBn").onclick=null;
+            console.log("WebSocket已经被关闭了");
+        };
+
+    </script>
+</head>
+<body>
+<div style="width: 600px;height: 240px;overflow-y: auto;border: 1px solid #333;" id="show">
+    <input type="text" size="80" id="msg" name="msg" placeholder="输入聊天内容">
+    <input type="button" value="发送" id="sendBn" name="sendBn">
+</div>
+</body>
+</html>
