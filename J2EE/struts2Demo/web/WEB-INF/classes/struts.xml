@@ -6,7 +6,7 @@
 <struts>
     <!--指定全局国际化资源文件-->
     <constant name="struts.custom.i18n.resources" value="mess"/>
-    <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
     <constant name="struts.devMode" value="true"/>
     <!--所有的Action定义都应该放在package下-->
     <package name="crazyit" namespace="/" extends="struts-default">
@@ -16,7 +16,7 @@
             <result name="success">/WEB-INF/content/welcome.jsp</result>
         </action>
         <action name="*">
-            <result>/WEB-INF/content/3_5/{1}.jsp</result>
+            <result>/WEB-INF/content/3_6/{1}.jsp</result>
         </action>
         <action name="login2" class="org.crazyit.app.action.LoginAction3_5">
             <result name="error">/WEB-INF/content/3_5/error.jsp</result>
@@ -29,6 +29,18 @@
         <action name="login3_5_4" class="org.crazyit.app.action.LoginAction3_5_3">
             <result name="error">/WEB-INF/content/3_5/error.jsp</result>
             <result name="success">/WEB-INF/content/3_5/welcome_3_5_3.jsp</result>
+        </action>
+        <action name="login3_6" class="org.crazyit.app.action.LoginRegistAction">
+            <result name="error">/WEB-INF/content/3_6/error.jsp</result>
+            <result name="success">/WEB-INF/content/3_6/welcome.jsp</result>
+        </action>
+        <action name="regist" class="org.crazyit.app.action.LoginRegistAction" method="regist">
+            <result name="error">/WEB-INF/content/3_6/error.jsp</result>
+            <result name="success">/WEB-INF/content/3_6/welcome.jsp</result>
+        </action>
+        <action name="*Action" class="org.crazyit.app.action.LoginRegistAction2" method="{1}">
+            <result name="error">/WEB-INF/content/3_6/error.jsp</result>
+            <result name="success">/WEB-INF/content/3_6/welcome.jsp</result>
         </action>
     </package>
 </struts>
