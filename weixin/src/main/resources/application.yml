@@ -1,0 +1,6 @@
+server:
+   port: 8997
+
+weixin:
+   appid: wxfc380044405bf708
+   appsecret: e410fbae45a8e9589b0a64ef0cef67bb
