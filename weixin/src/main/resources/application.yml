@@ -4,3 +4,4 @@ server:
 weixin:
    appid: wxfc380044405bf708
    appsecret: e410fbae45a8e9589b0a64ef0cef67bb
+   base_access_token: C9lxQST5WdwttwV37DKKBN07NrKTycAu59-3jIIeyAYB9nY8vj_tk8SG6o-QMIVLQSH8IDOODDHy9fq7sdlSps0whfVbvrKvo1qRRpYEQw1ZxCmkjeJ6c7tblH3QFZ8MMOKjAHAGIE
