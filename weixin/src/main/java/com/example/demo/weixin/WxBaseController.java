@@ -21,6 +21,7 @@ import org.springframework.web.client.RestTemplate;
 import javax.print.DocFlavor;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.net.URL;
 import java.net.URLEncoder;
 
@@ -97,10 +98,14 @@ public class WxBaseController  {
     }
 
     @RequestMapping("/test")
-    public String test(){
-        String redirectUrl=String.format(WeiXinConstant.WEIXIN_WEB_AUTHORIZE,appId, URLEncoder.encode("http://jennie.51vip.biz/redirectTest"),"snsapi_userinfo");
-        System.out.println(redirectUrl);
-        return redirectUrl;
+    public void test(HttpServletResponse servletResponse){
+        try {
+            String redirectUrl=String.format(WeiXinConstant.WEIXIN_WEB_AUTHORIZE,appId, URLEncoder.encode("http://jennie.51vip.biz/redirectTest","utf-8"),"snsapi_userinfo");
+            System.out.println(redirectUrl);
+            servletResponse.sendRedirect(redirectUrl);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @RequestMapping("/redirectTest")
@@ -108,5 +113,10 @@ public class WxBaseController  {
         System.out.println(code);
         System.out.println(state);
         return "test";
+    }
+
+    @RequestMapping("/test22")
+    public String test2(){
+        return "test2";
     }
 }

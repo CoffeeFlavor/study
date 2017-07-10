@@ -3,7 +3,6 @@
     test
 </head>
 <body>
-hello world!!!
-<a href="/test22">点我</a>
+ 你好好久不见！！！！
 </body>
 </html>
