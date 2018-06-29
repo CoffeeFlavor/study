@@ -11,5 +11,9 @@ public class Test {
         BigDecimal v=new BigDecimal("2.135382482347");
        BigDecimal v2= v.divide(BigDecimal.ONE,RoundingMode.HALF_UP);
         System.out.println(v2);
+
+        int portNumber=1234;
+        Runnable r=() -> System.out.println(portNumber);
+
     }
 }
