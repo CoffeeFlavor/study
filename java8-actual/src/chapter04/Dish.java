@@ -67,4 +67,20 @@ public class Dish {
     public static void setMemu(List<Dish> memu) {
         Dish.memu = memu;
     }
+
+    @Override
+    public String toString() {
+        return "Dish{" +
+                "name='" + name + '\'' +
+                ", vegetarian=" + vegetarian +
+                ", calories=" + calories +
+                ", type=" + type +
+                '}';
+    }
+
+    public enum CaloriceLevel{
+        DIET,
+        NORMAL,
+        FAT
+    }
 }

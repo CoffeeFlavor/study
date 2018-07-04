@@ -2,6 +2,7 @@ package chapter06.node22;
 
 import chapter04.Dish;
 
+import javax.swing.text.StyleContext;
 import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.stream.Collector;
@@ -22,6 +23,7 @@ public class Run {
         System.out.println(avgCalories);
 
         IntSummaryStatistics  summaryStatistics=menu.stream().collect(Collectors.summarizingInt(Dish::getCalories));
-        System.out.println(summaryStatistics.getAverage());
+        System.out.println(summaryStatistics.getAverage()+" "+summaryStatistics.getCount()
+                +" "+summaryStatistics.getMax()+" "+summaryStatistics.getMin()+" "+summaryStatistics.getSum());
     }
 }
