@@ -1,6 +1,4 @@
-package chapter02.node02.point04;
-
-import chapter02.node02.point02.ObjectService;
+package chapter02.node02.point06;
 
 /**
  * @author : jennie
