@@ -12,7 +12,7 @@ import java.util.function.Function;
  */
 public class Run {
 
-    public long measureSumPerf(Function<Long,Long> adder,long n){
+    public static long measureSumPerf(Function<Long,Long> adder,long n){
         long fastest=Long.MAX_VALUE;
 
         for (int i = 0; i < 10; i++) {
@@ -52,5 +52,7 @@ public class Run {
         }else {
             System.out.println("没有改变");
         }
+
+//        System.out.println("Sequential sum done in: "+measureSumPerf());
     }
 }
