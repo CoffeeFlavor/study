@@ -6,8 +6,10 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.Executors;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author : liunengbiao
@@ -27,9 +29,15 @@ public class TestGoogleFutures {
 
     @Test
     public void testListenableFuture() {
+        try {
+            testCompletableFuture();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println("真的结束了");
     }
 
-    @Test
+    //    @Test
     public void testCompletableFuture() throws Exception {
         // case1: supplyAsync
 //        CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> {
@@ -75,23 +83,40 @@ public class TestGoogleFutures {
 //                (x, y) -> x + "-" + y);
 //        LOG.info(f.get());
 
-        CompletableFuture<String> future=CompletableFuture.supplyAsync(() -> {
-            System.out.println("你好，我是异步线程");
+
+        BlockingQueue<Integer> blockingQueue = new LinkedBlockingDeque<>(5);
+        List<CompletableFuture<Integer>> futures = new ArrayList<>();
+        List<CompletableFuture<Integer>> removeFutures = new ArrayList<>();
+        for (int j = 0; j < 20; j++) {
+            final Integer index = j;
             try {
-                Thread.sleep(6000);
+                blockingQueue.put(index);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            return "hello";
-        });
-        future.whenComplete((s, throwable) -> {
-            System.out.println(s);
+            CompletableFuture<Integer> future = CompletableFuture.supplyAsync(() -> {
+                System.out.println("你好，我是异步线程" + index);
 
-        });
-        for (int i = 0; i < 5000; i++) {
-            Thread.sleep(1000);
-            System.out.println("哈哈哈");
+                try {
+                    Thread.sleep(6000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                return index;
+            });
+            futures.add(future);
+            future.whenComplete((s, throwable) -> {
+                System.out.println(s);
+                blockingQueue.remove(s);
+                removeFutures.add(future);
+            });
         }
+        futures.removeAll(removeFutures);
+        System.out.println(futures.size());
 
+        for (CompletableFuture<Integer> future : futures) {
+            future.get();
+        }
+        System.out.println("结束了");
     }
 }
