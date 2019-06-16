@@ -24,7 +24,7 @@ public class C {
                 System.out.println(" 消费者 "
                         +Thread.currentThread().getName()+" RUNNABLE 了 ");
                 ValueObject.value="";
-                lock.notifyAll();
+                lock.notify();
             }
         }catch (InterruptedException e){
             e.printStackTrace();

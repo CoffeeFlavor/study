@@ -28,7 +28,7 @@ public class P {
                 String value=System.currentTimeMillis()+"_"
                         +System.nanoTime();
                 ValueObject.value=value;
-                lock.notifyAll();
+                lock.notify();
             }
         } catch (InterruptedException e){
             e.printStackTrace();
