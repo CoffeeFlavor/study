@@ -1,0 +1,36 @@
+2019-04-10 20:01:16.149 [main] ERROR net.sourceforge.tess4j.Tesseract 244 - null
+java.lang.NullPointerException: null
+	at net.sourceforge.tess4j.Tesseract.dispose(Tesseract.java:819)
+	at net.sourceforge.tess4j.Tesseract.doOCR(Tesseract.java:239)
+	at net.sourceforge.tess4j.Tesseract.doOCR(Tesseract.java:194)
+	at Test.main(Test.java:27)
+2019-04-10 20:02:38.475 [main] ERROR net.sourceforge.tess4j.Tesseract 244 - null
+java.lang.NullPointerException: null
+	at net.sourceforge.tess4j.Tesseract.dispose(Tesseract.java:819)
+	at net.sourceforge.tess4j.Tesseract.doOCR(Tesseract.java:239)
+	at net.sourceforge.tess4j.Tesseract.doOCR(Tesseract.java:194)
+	at Test.main(Test.java:27)
+2019-04-10 20:04:39.686 [main] ERROR net.sourceforge.tess4j.Tesseract 244 - null
+java.lang.NullPointerException: null
+	at net.sourceforge.tess4j.Tesseract.dispose(Tesseract.java:819)
+	at net.sourceforge.tess4j.Tesseract.doOCR(Tesseract.java:239)
+	at net.sourceforge.tess4j.Tesseract.doOCR(Tesseract.java:194)
+	at Test.main(Test.java:27)
+2019-04-10 20:05:57.410 [main] ERROR net.sourceforge.tess4j.Tesseract 244 - null
+java.lang.NullPointerException: null
+	at net.sourceforge.tess4j.Tesseract.dispose(Tesseract.java:819)
+	at net.sourceforge.tess4j.Tesseract.doOCR(Tesseract.java:239)
+	at net.sourceforge.tess4j.Tesseract.doOCR(Tesseract.java:194)
+	at Test.main(Test.java:27)
+2019-04-10 20:11:43.806 [main] ERROR net.sourceforge.tess4j.Tesseract 244 - null
+java.lang.NullPointerException: null
+	at net.sourceforge.tess4j.Tesseract.dispose(Tesseract.java:819)
+	at net.sourceforge.tess4j.Tesseract.doOCR(Tesseract.java:239)
+	at net.sourceforge.tess4j.Tesseract.doOCR(Tesseract.java:194)
+	at Test.main(Test.java:27)
+2019-04-10 20:19:17.734 [main] ERROR net.sourceforge.tess4j.Tesseract 244 - null
+java.lang.NullPointerException: null
+	at net.sourceforge.tess4j.Tesseract.dispose(Tesseract.java:819)
+	at net.sourceforge.tess4j.Tesseract.doOCR(Tesseract.java:239)
+	at net.sourceforge.tess4j.Tesseract.doOCR(Tesseract.java:194)
+	at Test.main(Test.java:27)

@@ -1,0 +1,22 @@
+package chapter02.node02.point10.StringAndSyn;
+
+/**
+ * @author : jennie
+ * @date: 2018/7/15
+ * @Time: 17:22
+ */
+public class Service {
+
+    public static void print(String stringParam){
+        try {
+            synchronized (stringParam){
+                while (true){
+                    System.out.println(Thread.currentThread().getName());
+                    Thread.sleep(1000);
+                }
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}

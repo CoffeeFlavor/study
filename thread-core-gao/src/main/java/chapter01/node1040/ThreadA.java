@@ -1,0 +1,29 @@
+package chapter01.node1040;
+
+/**
+ * @author : jennie
+ * @date: 2018/7/14
+ * @Time: 12:20
+ */
+public class ThreadA extends Thread {
+
+    private int count=0;
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
+    @Override
+    public void run() {
+        while (true){
+            count++;
+            if (this.isInterrupted()){
+                break;
+            }
+        }
+    }
+}

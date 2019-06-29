@@ -1,0 +1,12 @@
+ERROR 2019-04-11 10:35:32.367 [main] (net.sourceforge.tess4j.Tesseract:244）doOCR - null
+java.lang.NullPointerException
+	at net.sourceforge.tess4j.Tesseract.dispose(Tesseract.java:819) ~[tess4j-4.2.1.jar:4.2.1]
+	at net.sourceforge.tess4j.Tesseract.doOCR(Tesseract.java:239) [tess4j-4.2.1.jar:4.2.1]
+	at net.sourceforge.tess4j.Tesseract.doOCR(Tesseract.java:194) [tess4j-4.2.1.jar:4.2.1]
+	at TesseractExample.main(TesseractExample.java:20) [classes/:?]
+ERROR 2019-04-11 10:39:20.754 [main] (net.sourceforge.tess4j.Tesseract:244）doOCR - null
+java.lang.NullPointerException
+	at net.sourceforge.tess4j.Tesseract.dispose(Tesseract.java:819) ~[tess4j-4.2.1.jar:4.2.1]
+	at net.sourceforge.tess4j.Tesseract.doOCR(Tesseract.java:239) [tess4j-4.2.1.jar:4.2.1]
+	at net.sourceforge.tess4j.Tesseract.doOCR(Tesseract.java:194) [tess4j-4.2.1.jar:4.2.1]
+	at TesseractExample.main(TesseractExample.java:20) [classes/:?]
