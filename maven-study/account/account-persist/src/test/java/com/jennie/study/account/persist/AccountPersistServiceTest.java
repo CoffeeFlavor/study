@@ -7,6 +7,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.io.File;
+import java.io.InputStream;
+import java.util.Properties;
 
 import static org.junit.Assert.*;
 
@@ -21,12 +23,16 @@ public class AccountPersistServiceTest {
 
     @Before
     public void prepare() throws Exception{
-        File persistDateFile=new File("target/test-classes/persist-data.xnl");
+        InputStream inputStream= this.getClass().getClassLoader().getResourceAsStream("account-service.properties");
+        Properties p=new Properties();
+        p.load(inputStream);
+        File persistDateFile=new File(p.getProperty("persist.file"));
         if (persistDateFile.exists()){
             persistDateFile.delete();
         }
 
         ApplicationContext ctx=new ClassPathXmlApplicationContext("account-persist.xml");
+
         service=(AccountPersistService)ctx.getBean("accountPersistService");
 
         Account account=new Account();
