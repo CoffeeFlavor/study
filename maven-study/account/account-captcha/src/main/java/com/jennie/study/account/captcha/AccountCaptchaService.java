@@ -1,6 +1,5 @@
 package com.jennie.study.account.captcha;
 
-import sun.reflect.generics.tree.VoidDescriptor;
 
 import java.util.List;
 
@@ -11,7 +10,7 @@ import java.util.List;
  */
 public interface AccountCaptchaService {
 
-    String getnerateCaptchaKey() throws AccountCaptchaException;
+    String generateCaptchaKey() throws AccountCaptchaException;
 
     byte[] generateCaptChaImage(String captchaKey ) throws AccountCaptchaException;
 

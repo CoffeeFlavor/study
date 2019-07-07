@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<suite name="Suite1" verbose="1">
+    <test nane="Regression1">
+        <classes>
+            <class name="com.jennie.study.account.captcha.RandomGenerator"/>
+        </classes>
+    </test>
+</suite>
