@@ -16,8 +16,8 @@ import static org.junit.Assert.*;
 
 /**
  * @author : jennie
- * @date: 2019/6/30
- * @Time: 17:49
+ * date: 2019/6/30
+ * Time: 17:49
  */
 
 public class AccountEmailServiceTest {

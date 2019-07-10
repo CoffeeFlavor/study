@@ -10,8 +10,8 @@ import static org.junit.Assert.assertFalse;
 
 /**
  * @author : jennie
- * @date: 2019/7/6
- * @Time: 17:21
+ * date: 2019/7/6
+ * Time: 17:21
  */
 public class RandomGeneratorTest {
 

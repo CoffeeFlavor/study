@@ -10,8 +10,8 @@ import javax.mail.internet.MimeMessage;
 
 /**
  * @author : jennie
- * @date: 2019/6/30
- * @Time: 17:22
+ * date: 2019/6/30
+ * Time: 17:22
  */
 public class AccountEmailServiceImpl implements AccountEmailService {
 

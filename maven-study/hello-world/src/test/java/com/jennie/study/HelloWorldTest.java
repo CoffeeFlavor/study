@@ -7,8 +7,8 @@ import static org.junit.Assert.assertEquals;
 
 /**
  * @author : jennie
- * @date: 2019/6/30
- * @Time: 15:20
+ * date: 2019/6/30
+ * Time: 15:20
  */
 public class HelloWorldTest {
 

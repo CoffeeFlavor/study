@@ -2,8 +2,8 @@ package com.jennie.study.account.persist;
 
 /**
  * @author : jennie
- * @date: 2019/7/3
- * @Time: 21:46
+ * date: 2019/7/3
+ * Time: 21:46
  */
 public interface AccountPersistService {
 

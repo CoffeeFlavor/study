@@ -4,8 +4,8 @@ import com.jennie.study.account.email.exception.AccountEmailException;
 
 /**
  * @author : jennie
- * @date: 2019/6/30
- * @Time: 17:20
+ * date: 2019/6/30
+ * Time: 17:20
  */
 public interface AccountEmailService {
 

@@ -2,8 +2,8 @@ package com.jennie.study;
 
 /**
  * @author : jennie
- * @date: 2019/6/30
- * @Time: 15:11
+ * date: 2019/6/30
+ * Time: 15:11
  */
 public class HelloWorld {
 

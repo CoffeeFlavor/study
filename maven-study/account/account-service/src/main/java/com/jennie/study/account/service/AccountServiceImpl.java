@@ -15,8 +15,8 @@ import java.util.Map;
 
 /**
  * @author : jennie
- * @date: 2019/7/7
- * @Time: 16:52
+ * date: 2019/7/7
+ * Time: 16:52
  */
 public class AccountServiceImpl  implements AccountService{
 
@@ -99,7 +99,7 @@ public class AccountServiceImpl  implements AccountService{
             activityMap.put(activationId,account.getId());
 
             String link=signUpRequest.getActivateServiceUrl().endsWith("/")?signUpRequest.getActivateServiceUrl()
-                    +activationId:signUpRequest.getActivateServiceUrl()+"?key"+activationId;
+                    +activationId:signUpRequest.getActivateServiceUrl()+"?key="+activationId;
 
             accountEmailService.sendEmail(account.getEmail(),"Please Activate You Account",link);
         }  catch (AccountCaptchaException e) {

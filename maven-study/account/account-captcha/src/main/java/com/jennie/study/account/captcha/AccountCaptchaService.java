@@ -5,8 +5,8 @@ import java.util.List;
 
 /**
  * @author : jennie
- * @date: 2019/7/5
- * @Time: 21:32
+ * date: 2019/7/5
+ * Time: 21:32
  */
 public interface AccountCaptchaService {
 

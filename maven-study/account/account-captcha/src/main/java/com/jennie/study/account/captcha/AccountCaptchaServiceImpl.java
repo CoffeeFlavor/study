@@ -16,8 +16,8 @@ import java.util.Properties;
 
 /**
  * @author : jennie
- * @date: 2019/7/6
- * @Time: 16:08
+ * date: 2019/7/6
+ * Time: 16:08
  */
 public class AccountCaptchaServiceImpl implements AccountCaptchaService , InitializingBean {
     private DefaultKaptcha producer;

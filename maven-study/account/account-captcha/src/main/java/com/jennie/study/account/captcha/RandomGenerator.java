@@ -4,8 +4,8 @@ import java.util.Random;
 
 /**
  * @author : jennie
- * @date: 2019/7/6
- * @Time: 16:03
+ * date: 2019/7/6
+ * Time: 16:03
  */
 public class RandomGenerator {
 

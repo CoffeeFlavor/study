@@ -2,8 +2,8 @@ package com.jennie.study.account.persist;
 
 /**
  * @author : seven
- * @date: 2019/7/3
- * @Time: 21:44
+ * date: 2019/7/3
+ * Time: 21:44
  */
 public class Account {
 

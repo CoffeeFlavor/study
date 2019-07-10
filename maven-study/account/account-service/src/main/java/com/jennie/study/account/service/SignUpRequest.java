@@ -2,8 +2,8 @@ package com.jennie.study.account.service;
 
 /**
  * @author : jennie
- * @date: 2019/7/7
- * @Time: 16:49
+ * date: 2019/7/7
+ * Time: 16:49
  */
 public class SignUpRequest {
 

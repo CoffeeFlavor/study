@@ -2,8 +2,8 @@ package com.jennie.study.account.captcha;
 
 /**
  * @author : jennie
- * @date: 2019/7/5
- * @Time: 21:33
+ * date: 2019/7/5
+ * Time: 21:33
  */
 public class AccountCaptchaException extends RuntimeException{
 
