@@ -1,9 +1,6 @@
 package com.springinaction.knights.config;
 
-import com.springinaction.knights.BraveKnight;
-import com.springinaction.knights.Knight;
-import com.springinaction.knights.Quest;
-import com.springinaction.knights.SlayDragonQuest;
+import com.springinaction.knights.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -18,7 +15,7 @@ public class KnightConfig {
 
 
     @Bean
-    public Knight kight(){
+    public Knight knight(){
         return new BraveKnight(quest());
     }
 
@@ -26,5 +23,11 @@ public class KnightConfig {
     @Bean
     public Quest quest(){
         return new SlayDragonQuest(System.out);
+    }
+
+
+    @Bean
+    public Minstrel minstrel(){
+        return new Minstrel(System.out);
     }
 }

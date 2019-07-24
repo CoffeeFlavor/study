@@ -12,8 +12,8 @@ public class KnightMain {
     public static void main(String[] args) throws Exception{
 
         ClassPathXmlApplicationContext context=new ClassPathXmlApplicationContext("knights.xml");
-        Knight kight=context.getBean(Knight.class);
-        kight.embarkOnQuest();
+        Knight knight=context.getBean(Knight.class);
+        knight.embarkOnQuest();
         context.close();
 
     }

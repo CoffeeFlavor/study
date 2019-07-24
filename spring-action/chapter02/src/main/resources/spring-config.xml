@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:p="http://www.springframework.org/schema/p" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+<!--    <bean id="caPlayer" class="com.springinaction.study.chapter02.CDPlayer"-->
+<!--         p:cd-ref="compactDisc"/>-->
+
+<!--        <property name="cd" ref="compactDisc"/>-->
+<!--    </bean>-->
+<!--    <bean id="compactDisc" class="com.springinaction.study.chapter02.javaconfigauto.SgtPeppers"/>-->
+
+<import resource="java-config.xml"/>
+
+<!--    <util:list id="trackList">-->
+<!--        <value>Sgt. Pepper's Lonely Hearts Club Band</value>-->
+<!--        <value>With a Little Help From My Friends</value>-->
+<!--        <value>Lucy in the sky with Diamonds</value>-->
+<!--        <value>Getting Better</value>-->
+<!--        <value>Fixing a hole</value>-->
+<!--    </util:list>-->
+
+<!--    <bean id="compactDisc" class="com.springinaction.study.chapter02.BlankDisc"-->
+<!--    >-->
+<!--        <constructor-arg value="Sgt. Pepper's LoneLy Hearts Club Band"/>-->
+<!--        <constructor-arg value="The Beatles"/>-->
+<!--        <constructor-arg ref="trackList">-->
+<!--            &lt;!&ndash;            <list>&ndash;&gt;-->
+<!--            &lt;!&ndash;                <value>Sgt. Pepper's Lonely Hearts Club Band</value>&ndash;&gt;-->
+<!--            &lt;!&ndash;                <value>With a Little Help From My Friends</value>&ndash;&gt;-->
+<!--            &lt;!&ndash;                <value>Lucy in the sky with Diamonds</value>&ndash;&gt;-->
+<!--            &lt;!&ndash;                <value>Getting Better</value>&ndash;&gt;-->
+<!--            &lt;!&ndash;                <value>Fixing a hole</value>&ndash;&gt;-->
+<!--            &lt;!&ndash;&lt;!&ndash;                ...other tracks omitted for brevity&ndash;&gt;&ndash;&gt;-->
+<!--            &lt;!&ndash;            </list>&ndash;&gt;-->
+<!--        </constructor-arg>-->
+<!--    </bean>-->
+</beans>
