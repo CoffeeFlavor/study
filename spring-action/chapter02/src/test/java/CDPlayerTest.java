@@ -18,7 +18,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * Time: 6:42
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {CDPlayerConfig.class})
+//@ContextConfiguration(classes = {CDPlayerConfig.class})
+@ContextConfiguration(locations = "classpath:spring-config.xml")
 public class CDPlayerTest {
 
     @Rule
