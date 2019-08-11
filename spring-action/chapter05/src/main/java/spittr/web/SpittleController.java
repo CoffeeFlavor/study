@@ -4,9 +4,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.UsesSunMisc;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import spittr.Spittle;
 import spittr.data.SpittleRespository;
+
+import javax.validation.Valid;
 
 /**
  * @author : jennie
@@ -14,8 +20,9 @@ import spittr.data.SpittleRespository;
  * @Time: 16:11
  */
 @Controller
-@RequestMapping("/spittles")
 public class SpittleController {
+
+    private final static String MAX_LONG_STRING=Long.toString(Long.MAX_VALUE);
 
     private SpittleRespository spittleRespository;
 
@@ -24,9 +31,38 @@ public class SpittleController {
         this.spittleRespository=spittleRespository;
     }
 
-    @RequestMapping(method = RequestMethod.GET)
-    public String spittles(Model model){
-        model.addAttribute("spittleMessage",spittleRespository.findSpittles(Long.MAX_VALUE,20));
+    @RequestMapping(value = "spittles",method = RequestMethod.GET)
+    public String spittles(Model model, @RequestParam(value = "max",defaultValue = "2000") long max,@RequestParam(value = "count",defaultValue ="20") int count){
+        model.addAttribute("spittleMessage",spittleRespository.findSpittles(max,count));
         return "spittles";
+    }
+
+//    @RequestMapping(value = "spittle/{spittleId}",method = RequestMethod.GET)
+//    public String spittle(Model model, @PathVariable long spittleId){
+//        model.addAttribute("spittle",spittleRespository.getSpittle(spittleId));
+//        return "spittle";
+//    }
+
+    @RequestMapping(value = "spittle/{username}",method = RequestMethod.GET)
+    public String profile(Model model, @PathVariable String username){
+        model.addAttribute("spittle",spittleRespository.getProfile(username));
+        return "profile";
+    }
+
+
+
+    @RequestMapping(value = "spittle/register",method = RequestMethod.GET)
+    public String showRegister(){
+        return "registerForm";
+    }
+
+    @RequestMapping(value = "spittle/register",method = RequestMethod.POST)
+    public String processRegisterAction(@Valid Spittle spittle, Errors errors){
+        if (errors.hasErrors()) {
+            return "registerForm";
+        }
+        System.out.println(errors.toString());
+        spittleRespository.save(spittle);
+        return "redirect:/spittle/"+spittle.getUsername();
     }
 }

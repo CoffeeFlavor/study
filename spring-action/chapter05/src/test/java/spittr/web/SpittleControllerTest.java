@@ -40,9 +40,9 @@ public class SpittleControllerTest {
                 .setSingleView(new InternalResourceView("WEN-INF/views/spittles.jsp"))
                 .build();
         mockMvc.perform(get("/spittles"))
-//                .andExpect(view().name("spittles"))
-//                .andExpect(model().attributeExists("spittle"))
-                .andExpect(model().attribute("spittle",hasItems(expectedSpittles.toArray())));
+                .andExpect(view().name("spittles"))
+                .andExpect(model().attributeExists("spittleMessage"))
+                .andExpect(model().attribute("spittleMessage",hasItems(expectedSpittles.toArray())));
     }
 
     private List<Spittle> createSpittleList(int count){
@@ -51,5 +51,19 @@ public class SpittleControllerTest {
             spittles.add(new Spittle("Spittle"+i,new Date()));
         }
         return spittles;
+    }
+
+    @Test
+    public void shouldProcessRegisterAction() throws Exception{
+     SpittleRespository mockSpittleRespository=mock(SpittleRespository.class);
+     Spittle unsave=new Spittle();
+     unsave.setFirstName("jbauer");
+     unsave.setLastName("24hour");
+     unsave.setUsername("Jack");
+     unsave.setPassword("Bauer");
+     unsave.setId(21L);
+//     when(mockSpittleRespository.save(unsave)).thenReturn()
+
+
     }
 }
