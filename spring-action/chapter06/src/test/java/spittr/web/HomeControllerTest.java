@@ -1,7 +1,7 @@
 package spittr.web;
 
 
-import chapter06.spittr.web.HomeController;
+import chapter07.spittr.web.HomeController;
 import org.junit.Test;
 import org.springframework.test.web.servlet.MockMvc;
 

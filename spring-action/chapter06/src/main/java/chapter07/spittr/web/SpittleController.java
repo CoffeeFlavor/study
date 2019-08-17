@@ -1,17 +1,14 @@
-package chapter06.spittr.web;
+package chapter07.spittr.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
-import chapter06.spittr.Spittle;
-import chapter06.spittr.data.SpittleRespository;
-import org.springframework.web.multipart.MultipartFile;
+import chapter07.spittr.Spittle;
+import chapter07.spittr.data.SpittleRespository;
 
 import javax.validation.Valid;
-import java.io.File;
-import java.io.IOException;
 
 /**
  * @author : jennie

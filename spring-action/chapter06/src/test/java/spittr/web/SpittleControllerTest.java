@@ -1,13 +1,13 @@
 package spittr.web;
 
 
-import chapter06.spittr.web.SpittleController;
+import chapter07.spittr.web.SpittleController;
 import org.junit.Test;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.servlet.view.InternalResourceView;
-import chapter06.spittr.Spittle;
-import chapter06.spittr.data.SpittleRespository;
+import chapter07.spittr.Spittle;
+import chapter07.spittr.data.SpittleRespository;
 
 import java.util.ArrayList;
 import java.util.Date;

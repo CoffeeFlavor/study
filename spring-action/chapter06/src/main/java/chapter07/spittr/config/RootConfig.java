@@ -1,4 +1,4 @@
-package chapter06.spittr.config;
+package chapter07.spittr.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

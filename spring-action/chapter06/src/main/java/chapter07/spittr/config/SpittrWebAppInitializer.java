@@ -1,10 +1,7 @@
-package chapter06.spittr.config;
+package chapter07.spittr.config;
 
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
-
-import javax.servlet.MultipartConfigElement;
-import javax.servlet.ServletRegistration;
 
 /**
  * @author : jennie

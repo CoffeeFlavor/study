@@ -1,7 +1,7 @@
-package chapter06.spittr.data;
+package chapter07.spittr.data;
 
 import org.springframework.stereotype.Service;
-import chapter06.spittr.Spittle;
+import chapter07.spittr.Spittle;
 
 import java.util.ArrayList;
 import java.util.Date;

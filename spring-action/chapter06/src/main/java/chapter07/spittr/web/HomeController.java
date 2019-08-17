@@ -1,4 +1,4 @@
-package chapter06.spittr.web;
+package chapter07.spittr.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
