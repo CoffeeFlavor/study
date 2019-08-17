@@ -25,10 +25,10 @@ public class Spittle {
     private Double longitude;
 
     @NotNull
-    @Size(min = 5,max =16)
+    @Size(min = 5,max =16,message = "{firstName.size}")
     private String firstName;
     @NotNull
-    @Size(min = 5,max =16)
+    @Size(min = 5,max =16,message = "lastName 要大于5 小于16个字符")
     private String lastName;
 
     @NotNull
@@ -137,4 +137,6 @@ public class Spittle {
     public int hashCode() {
         return HashCodeBuilder.reflectionHashCode(this,"id","time");
     }
+
+
 }

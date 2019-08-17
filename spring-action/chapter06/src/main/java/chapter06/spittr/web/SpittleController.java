@@ -4,14 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import chapter06.spittr.Spittle;
 import chapter06.spittr.data.SpittleRespository;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
+import java.io.File;
+import java.io.IOException;
 
 /**
  * @author : jennie
@@ -36,11 +36,11 @@ public class SpittleController {
         return "spittles";
     }
 
-//    @RequestMapping(value = "spittle/{spittleId}",method = RequestMethod.GET)
-//    public String spittle(Model model, @PathVariable long spittleId){
-//        model.addAttribute("spittle",spittleRespository.getSpittle(spittleId));
-//        return "spittle";
-//    }
+    @RequestMapping(value = "spittle/id/{spittleId}",method = RequestMethod.GET)
+    public String spittle(Model model, @PathVariable long spittleId){
+        model.addAttribute("spittle",spittleRespository.getSpittle(spittleId));
+        return "spittle";
+    }
 
     @RequestMapping(value = "spittle/{username}",method = RequestMethod.GET)
     public String profile(Model model, @PathVariable String username){
@@ -51,16 +51,21 @@ public class SpittleController {
 
 
     @RequestMapping(value = "spittle/register",method = RequestMethod.GET)
-    public String showRegister(){
+    public String showRegister(Model model){
+        Spittle spittle=new Spittle();
+        spittle.setFirstName("J");
+        spittle.setLastName("B");
+        spittle.setUsername("Jack");
+        spittle.setPassword("Jack");
+        model.addAttribute("spittle",spittle);
         return "registerForm";
     }
 
     @RequestMapping(value = "spittle/register",method = RequestMethod.POST)
-    public String processRegisterAction(@Valid Spittle spittle, Errors errors){
+    public String processRegisterAction( @Valid Spittle spittle, Errors errors){
         if (errors.hasErrors()) {
             return "registerForm";
         }
-        System.out.println(errors.toString());
         spittleRespository.save(spittle);
         return "redirect:/spittle/"+spittle.getUsername();
     }
