@@ -1,0 +1,21 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+>
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<div class="spittleView">
+    <div class="spittleMeseage" th:text="${spittle.username}">
+        <c:out value="${spittle.username}"/>
+    </div>
+    <span class="spittleTime" th:text="${spittle.firstName}">
+        <th:block>${spittle.firstName}</th:block>
+    </span>
+    <span th:text="${spittle.lastName}">
+
+    </span>
+</div>
+</body>
+</html>
