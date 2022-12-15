@@ -16,7 +16,7 @@
         <module>account-web</module>
     </modules>
     <properties>
-        <springframework.verion>2.5.6</springframework.verion>
+        <springframework.verion>5.2.20.RELEASE</springframework.verion>
         <version.maven-install-plugin>3.6.1</version.maven-install-plugin>
 
     </properties>
